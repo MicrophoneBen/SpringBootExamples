@@ -1,0 +1,3 @@
+zookeeper:
+  nodes-port: 192.168.1.150:2181
+  conec-time-out: 30000
