@@ -1,6 +1,9 @@
 package io.ymq.kafka;
 
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import io.ymq.entity.User;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.ProducerListener;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * 描述:消息生产者
@@ -22,6 +28,8 @@ public class MsgProducer {
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
+
+    private Gson gson = new GsonBuilder().create();
 
     public void sendMessage(String topicName, String jsonData) {
         log.info("向kafka推送数据:[{}]", jsonData);
@@ -48,6 +56,18 @@ public class MsgProducer {
                 return false;
             }
         });
+    }
+
+    public String sendData(){
+        User message = new User();
+        message.setId(System.currentTimeMillis());
+        message.setMsg(UUID.randomUUID().toString());
+        message.setSendTime(LocalDate.now());
+        message.setAge(18);
+        message.setName("张炳权");
+        log.info("+++++++++++++++++++++  message = {}", gson.toJson(message));
+        kafkaTemplate.send("zhangbingquan", gson.toJson(message));
+        return "Success";
     }
 
 }

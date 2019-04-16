@@ -27,5 +27,6 @@ public class BaseTest {
 
         msgProducer.sendMessage("topic-1", "topic--------1");
         msgProducer.sendMessage("topic-2", "topic--------2");
+        msgProducer.sendMessage("ymq", "这是来自Java的SpringBoot客户端的推送消息");
     }
 }
