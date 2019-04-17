@@ -24,4 +24,13 @@ public class ZkController {
         return "success";
     }
 
+    @GetMapping("/get")
+    public  String getData() throws InterruptedException, IOException, KeeperException {
+        return zkService.getNodeData();
+    }
+
+    @GetMapping("/update")
+    public String getUpdate() throws IOException, KeeperException, InterruptedException {
+        return zkService.getUpdate();
+    }
 }

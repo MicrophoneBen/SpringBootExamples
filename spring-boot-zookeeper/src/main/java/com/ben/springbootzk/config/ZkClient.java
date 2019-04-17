@@ -18,12 +18,12 @@ public class ZkClient {
     ZkConfigDto zkConfigDto;
 
     public ZooKeeper zkClientBuilder() throws IOException {
-        ZooKeeper zkClient = new ZooKeeper(zkConfigDto.getNodesPort(), zkConfigDto.getConecTimeOut(), event -> {
+
+        return new ZooKeeper(zkConfigDto.getNodesPort(), zkConfigDto.getConecTimeOut(), event -> {
+            //打印监听事件的数据状态
             System.out.println(event.getState());
             System.out.println(event.getType());
             System.out.println(event.getPath());
         });
-
-        return zkClient;
     }
 }
