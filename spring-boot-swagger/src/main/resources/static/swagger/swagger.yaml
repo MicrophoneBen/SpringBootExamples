@@ -1,16 +1,16 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "更多 Spring Boot 相关文章 http://www.ymq.io",
+        "description": "更多 Spring Boot 相关文章 https://microphoneben.github.io/",
         "version": "V1.0",
-        "title": "Spring Boot 中使用 Swagger2构建 RESTfulAPI 文档",
-        "termsOfService": "http://www.ymq.io"
+        "title": "Spring Boot 中基于Swagger2构建 RESTfulAPI 文档",
+        "termsOfService": "http://www.baidu.com"
     },
     "host": "127.0.0.1:8080",
     "basePath": "/",
     "tags": [
         {
-            "name": "ymq-controller",
+            "name": "Ben的Swagger测试",
             "description": "RESTful API"
         }
     ],
@@ -18,7 +18,7 @@
         "/user": {
             "get": {
                 "tags": [
-                    "ymq-controller"
+                    "ben-controller"
                 ],
                 "summary": "获取用户列表",
                 "operationId": "getUserListUsingGET",
@@ -51,7 +51,7 @@
             },
             "post": {
                 "tags": [
-                    "ymq-controller"
+                    "ben-controller"
                 ],
                 "summary": "创建用户",
                 "description": "根据User对象创建用户",
@@ -121,7 +121,7 @@
         "/user/{id}": {
             "get": {
                 "tags": [
-                    "ymq-controller"
+                    "ben-controller"
                 ],
                 "summary": "获取用户详细信息",
                 "description": "根据url的id来获取用户详细信息",
@@ -163,7 +163,7 @@
             },
             "put": {
                 "tags": [
-                    "ymq-controller"
+                    "ben-controller"
                 ],
                 "summary": "更新用户详细信息",
                 "description": "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息",
@@ -217,7 +217,7 @@
             },
             "delete": {
                 "tags": [
-                    "ymq-controller"
+                    "ben-controller"
                 ],
                 "summary": "删除用户",
                 "description": "根据url的id来指定删除对象",

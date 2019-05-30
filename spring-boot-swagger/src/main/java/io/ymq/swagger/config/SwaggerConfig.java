@@ -30,9 +30,10 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring Boot 中使用 Swagger2构建 RESTfulAPI 文档")
-                .description("更多 Spring Boot 相关文章 http://www.ymq.io")
-                .termsOfServiceUrl("http://www.ymq.io")
+                .title("Spring Boot 使用基于Swagger2.0的RestFul")
+                //.description("更多 Spring Boot 相关文章 http://www.ymq.io")
+                .description("更多 Spring Boot 相关文章 https://microphoneben.github.io")
+                .termsOfServiceUrl("http://www.baidu.com")
                 .version("V1.0")
                 .build();
     }

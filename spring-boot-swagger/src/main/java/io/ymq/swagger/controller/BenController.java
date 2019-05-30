@@ -17,8 +17,8 @@ import java.util.*;
  **/
 @RestController
 @RequestMapping("/user")
-@Api(value = "YmqController 测试", description = "RESTful API")
-public class YmqController {
+@Api(value = "User增删查 测试", description = "RESTful API")
+public class BenController {
 
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
